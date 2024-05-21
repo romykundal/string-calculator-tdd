@@ -1,6 +1,12 @@
 
 
 class StringCalculator {
+
+    /**
+     * Method to handle simple String calculator with a method signature
+     * @param {1,2,3} numbers 
+     * @returns 
+     */
     static add(numbers) {
         if (!numbers) {
             return 0;

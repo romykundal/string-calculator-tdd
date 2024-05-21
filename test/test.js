@@ -1,9 +1,8 @@
 import { expect } from 'chai';
 import StringCalculator from '../StringCalculator.js';
 
-
-
 describe('StringCalculator', () => {
+
     it('should return 0 for an empty string', () => {
         expect(StringCalculator.add("")).to.equal(0);
     });
@@ -20,5 +19,16 @@ describe('StringCalculator', () => {
         expect(StringCalculator.add("1,2,3,4")).to.equal(10);
     });
 
+    it('should handle new lines between numbers', () => {
+        expect(StringCalculator.add("1\n2,3")).to.equal(6);
+    });
+
+    it('should handle input is invalid', () => {
+        expect(StringCalculator.add("1\n2,3")).to.equal(6);
+    });
+
+    it('should handle different delimiters', () => {
+        expect(StringCalculator.add("//;\n1;2")).to.equal(3);
+    });
 
 });
