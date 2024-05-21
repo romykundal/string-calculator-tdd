@@ -23,12 +23,25 @@ describe('StringCalculator', () => {
         expect(StringCalculator.add("1\n2,3")).to.equal(6);
     });
 
-    it('should handle input is invalid', () => {
-        expect(StringCalculator.add("1\n2,3")).to.equal(6);
+    it('should throw an error for invalid input such as "1,\\n"', () => {
+        expect(() => StringCalculator.add("1,\n")).to.throw("invalid input: 1,\n");
     });
 
     it('should handle different delimiters', () => {
         expect(StringCalculator.add("//;\n1;2")).to.equal(3);
+    });
+    
+
+    it('should throw an error for negative numbers', () => {
+        expect(() => StringCalculator.add("1,-2,3")).to.throw("negative numbers not allowed: -2");
+    });
+
+    it('should show all negative numbers in the exception message', () => {
+        expect(() => StringCalculator.add("1,-2,3,-4")).to.throw("negative numbers not allowed: -2, -4");
+    });
+
+    it('should show more negative numbers in the exception message', () => {
+        expect(() => StringCalculator.add("1,-2,3,-4,5,-6")).to.throw("negative numbers not allowed: -2, -4, -6");
     });
 
 });
