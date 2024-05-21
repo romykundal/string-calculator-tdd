@@ -2,6 +2,51 @@
 # String Calculator
 
 This is a simple String Calculator implemented in Node.js, designed to handle a variety of input formats and delimiters while ensuring robustness through extensive test cases. The calculator supports summing up numbers provided in a string format, handling different delimiters, and providing meaningful error messages for invalid inputs and negative numbers.
+```
+
+## Prerequisites
+
+Before you can run the application and test cases, you need to have Node.js installed on your system.
+
+### Installing Node.js
+
+1. **Windows & macOS:**
+   - Download the installer from the official Node.js website: [Node.js Download](https://nodejs.org/)
+   - Run the installer and follow the instructions.
+
+2. **Linux:**
+   - Use your package manager to install Node.js. For example, on Ubuntu, you can use:
+     ```bash
+     sudo apt update
+     sudo apt install nodejs npm
+     ```
+
+3. **Verify the installation:**
+   - Open a terminal or command prompt and run the following commands:
+     ```bash
+     node -v
+     npm -v
+     ```
+   - These commands should print the installed versions of Node.js and npm.
+
+
+## Installation
+
+To use the String Calculator, clone this repository and install the dependencies:
+
+```bash
+git clone https://github.com/yourusername/string-calculator.git
+cd string-calculator
+npm install
+```
+
+## Running Tests
+
+To run the tests using Mocha and Chai, use the following command:
+
+```bash
+npm test
+```
 
 ## Features
 
@@ -63,24 +108,6 @@ expect(() => StringCalculator.add("1,-2,3,-4")).to.throw("negative numbers not a
 This additional test ensures that even more negative numbers are correctly listed in the error message.
 ```javascript
 expect(() => StringCalculator.add("1,-2,-3,-4,-5")).to.throw("negative numbers not allowed: -2, -3, -4, -5");
-```
-
-## Installation
-
-To use the String Calculator, clone this repository and install the dependencies:
-
-```bash
-git clone https://github.com/yourusername/string-calculator.git
-cd string-calculator
-npm install
-```
-
-## Running Tests
-
-To run the tests using Mocha and Chai, use the following command:
-
-```bash
-npm test
 ```
 
 ## License
